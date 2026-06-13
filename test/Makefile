@@ -1,6 +1,9 @@
 # Makefile
 # See https://docs.cocotb.org/en/stable/quickstart.html for more info
 
+COCOTB_HDL_TIMEUNIT = 1ns
+COCOTB_HDL_TIMEPRECISION = 1ns
+
 # defaults
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog

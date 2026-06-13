@@ -6,8 +6,7 @@ from cocotb.clock import Clock
 from cocotb.triggers import ClockCycles, Timer
 
 BAUD_RATE = 9600
-BIT_PERIOD_NS = 1_000_000_000 / BAUD_RATE  # ~104167 ns per bit at 9600 baud
-
+BIT_PERIOD_NS = round(1_000_000_000 / 9600)  # = 104167 ns
 # Must match pattern_player.v (CLK_FREQ / PLAY_RATE_HZ) and the RAM
 # depth in ram_256x8.v / pattern_player.v.
 PLAY_DIVISOR = 10_000
