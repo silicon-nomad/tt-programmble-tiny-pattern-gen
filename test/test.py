@@ -10,7 +10,7 @@ BIT_PERIOD_NS = round(1_000_000_000 / 9600)  # = 104167 ns
 # Must match pattern_player.v (CLK_FREQ / PLAY_RATE_HZ) and the RAM
 # depth in ram_256x8.v / pattern_player.v.
 PLAY_DIVISOR = 10_000
-RAM_DEPTH = 128
+RAM_DEPTH = 32
 
 
 async def uart_send_byte(dut, byte):
@@ -51,7 +51,7 @@ async def test_project(dut):
     dut.rst_n.value = 1
     await ClockCycles(dut.clk, 5)
 
-    dut._log.info("Filling RAM with 0x00-0x7F over UART")
+    dut._log.info("Filling RAM with 0x00-0x1F over UART")
     for i in range(RAM_DEPTH):
         await uart_send_byte(dut, i)
     await ClockCycles(dut.clk, 5)

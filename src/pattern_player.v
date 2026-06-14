@@ -5,11 +5,11 @@
 // from RAM_DEPTH-1 back to 0. `advance` pulses high for one cycle on
 // each step.
 //
-// NOTE: RAM_DEPTH defaults to 128 to match ram_256x8.v.
+// NOTE: RAM_DEPTH defaults to 32 to match ram_256x8.v.
 module pattern_player #(
     parameter CLK_FREQ     = 10_000_000,
     parameter PLAY_RATE_HZ = 1000,
-    parameter RAM_DEPTH    = 128
+    parameter RAM_DEPTH    = 32
 )(
     input  wire       clk,
     input  wire       rst_n,
