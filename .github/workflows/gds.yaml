@@ -17,6 +17,7 @@ jobs:
         uses: TinyTapeout/tt-gds-action@tt10
         with:
           flow: openlane2
+          pdk: gf180mcuD
 
   precheck:
     needs: gds
